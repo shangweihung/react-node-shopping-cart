@@ -33,11 +33,11 @@ const products = [
 const users = [
       {
         'name': 'user',
-        'password': 'qwerty'
+        'password': '0000'
       },
       {
-        'name': 'example',
-        'password': 'qwerty'
+        'name': 'test',
+        'password': '0000'
       }
 ];
   

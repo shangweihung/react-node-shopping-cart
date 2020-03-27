@@ -20,10 +20,11 @@ class Checkout extends Component {
                 let total = 0;
                 for (var i = 0; i < products.length; i++) {
                     total += products[i].price * products[i].qty;
+                
                 }
 	    	this.setState({ 
                 products: products, 
-                total:total
+                total:total.toFixed(2)
              });
 	    });
     }

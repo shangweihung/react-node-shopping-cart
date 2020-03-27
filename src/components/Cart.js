@@ -23,7 +23,7 @@ class Cart extends Component {
             }
             this.setState({
                 products: products,
-                total: total
+                total: total.toFixed(2)
             })
         })
     }
@@ -37,7 +37,7 @@ class Cart extends Component {
         let products = this.state.products.filter((item) => item.id!== product.id);
         this.setState({
             products: products,
-            total: total
+            total: total.toFixed(2)
         })
     }
 

@@ -6,7 +6,8 @@ class Login extends Component {
         super();
         this.state = {
             name: '',
-            password: ''
+            password: '',
+            errorMessage: ''
         }
 
     }
@@ -14,7 +15,9 @@ class Login extends Component {
     submitLogin = event =>{
         event.preventDefault();
         login(this.state).then(token => window.location='/')
-                         .catch(err => alert(err));
+                         .catch(err => {
+                             this.setState({errorMessage: err});
+                         });
     }
 
     handleInputChange = event => {
@@ -32,6 +35,7 @@ class Login extends Component {
                         <div className="panel-heading">
                             <h2>Login</h2>
                         </div>
+                        { this.state.errorMessage && <p className="error" style={{color: "red"}}> { this.state.errorMessage } </p> }
                         <div className="panel-body">
                             <form onSubmit={this.submitLogin}>
                                 <div className="form-group">
